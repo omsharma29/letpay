@@ -5,7 +5,7 @@ function Home() {
   return (
     <>
     <div>HomePage</div>
-    <Button href='/dashboard' >DashBoard</Button>
+    <Button  href='/api/auth/signin' >signin</Button>
     </>
   )
 }
