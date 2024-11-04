@@ -21,6 +21,10 @@ model User {
   auth_type   AuthType
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
+
+  Balance Balance[]
+
+  OnRampTransaction OnRampTransaction[]
 }
 
 model Merchant {
@@ -30,8 +34,33 @@ model Merchant {
   auth_type   AuthType   
 }
 
+model Balance {
+  id Int @id @default(autoincrement())
+  userId Int @unique
+  amount Int 
+  locked Int
+  user User @relation(fields: [userId], references: [id])
+}
+
+model OnRampTransaction {
+  id Int @id @default(autoincrement())
+  userId Int @unique
+  amount Int
+  startTime  DateTime
+  token     String       @unique
+  provider  String
+  user User @relation(fields: [userId], references: [id])
+  status OnRampStatus
+}
+
 enum AuthType {
   Google
   Github
   Email
+}
+
+enum OnRampStatus {
+  Success
+  Failure
+  Processing
 }
