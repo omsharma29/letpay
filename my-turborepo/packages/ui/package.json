@@ -5,7 +5,9 @@
   "exports": {
     "./button": "./src/button.tsx",
     "./avatar": "./src/avatar.tsx",
-    "./alert" : "./components/ui/alert.tsx"
+    "./alert": "./components/ui/alert.tsx",
+    "./sidebar": "./src/sidebar.tsx",
+    "./barchart": "./src/chart.tsx"
   },
   "main": "./components/button.tsx",
   "scripts": {
@@ -26,11 +28,15 @@
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.1",
+    "@radix-ui/react-dialog": "^1.1.2",
+    "@radix-ui/react-separator": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-tooltip": "^1.1.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.460.0",
     "react": "^18.2.0",
+    "recharts": "^2.13.3",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7"
   }

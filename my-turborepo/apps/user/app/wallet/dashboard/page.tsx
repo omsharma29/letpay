@@ -1,7 +1,17 @@
 import React from 'react'
+import {AppSidebar} from '../../components/sidebar'
+import Example  from '../../components/barchart';
+
 
 export default function page() {
   return (
-    <div className="text-white flex justify-center items-center">This is DashBoard Page !!! Coming Soon</div>
+    <>
+    <div>
+      <AppSidebar/>
+    </div>
+    <div style={{ width: '100%', height: '400px' }}>
+      <Example  />
+    </div>
+    </>
   )
 }
