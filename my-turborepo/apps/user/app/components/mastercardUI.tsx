@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@repo/ui/card"
 import { Button } from "@repo/ui/button"
 import Image from "next/image"
 import mastercard_logo from "./assets/mastercard_logo.png"
+import Link from "next/link"
 
 export default function Mastercard() {
   return (
@@ -44,17 +45,19 @@ export default function Mastercard() {
 
         {/* Action Buttons */}
         <div className="grid grid-cols-2 gap-6">
+          <Link href="/wallet/account">
           <Button 
             className="w-full bg-[#7B61FF] hover:bg-[#6B51FF] text-white rounded-xl h-14 text-lg"
           >
             Deposit
-          </Button>
+          </Button></Link>
+          <Link href="/wallet/transfer">
           <Button 
             variant="outline" 
             className="w-full border-[#7B61FF] text-[#7B61FF] hover:bg-[#7B61FF]/10 rounded-xl h-14 text-lg"
           >
             Transfer
-          </Button>
+          </Button></Link>
         </div>
       </CardContent>
     </div>

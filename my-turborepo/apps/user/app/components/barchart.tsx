@@ -37,7 +37,7 @@ const data = [
   { name: "Dec", uv: 3490, pv: 4300, amt: 2100 },
 ];
 
-export default class Example extends PureComponent {
+export default class Graph extends PureComponent {
   static demoUrl = "https://codesandbox.io/p/sandbox/simple-bar-chart-72d7y5";
 
   render() {

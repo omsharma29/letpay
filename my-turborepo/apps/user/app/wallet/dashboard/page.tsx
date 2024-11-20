@@ -1,21 +1,19 @@
 import React from 'react'
 import {AppSidebar} from '../../components/sidebar'
-import Example  from '../../components/barchart';
 import Mastercard from '../../components/mastercardUI';
 import Activity from '../../components/activity';
 import DashLogs from '../../components/dashlogs';
 import Greeting from '../../components/greeting';
+import Graph from '../../components/barchart';
 
 
 
 export default function page() {
   return (
     <>
-    <div  className='m-2'>
-      <AppSidebar/>
-    </div>
+
     <div  className='m-2' >
-      <Example  />
+      <Graph  />
     </div>
     <div  className='m-2'>
       <Mastercard/>

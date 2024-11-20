@@ -9,7 +9,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <AppSidebar />
         <div className=" flex ">
         <main className="flex-1">
-          <SidebarTrigger />
           {children}
         </main>
       </div>
