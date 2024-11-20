@@ -13,6 +13,8 @@ import {
   SidebarMenuItem,
 } from "@repo/ui/sidebar"
 
+
+
 // Menu items.
 const items = [
   {
@@ -44,6 +46,8 @@ const items = [
 
 export function AppSidebar() {
   return (
+
+    
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
@@ -65,6 +69,9 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
     </Sidebar>
+    
+
+
   )
 }
 
