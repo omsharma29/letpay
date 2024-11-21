@@ -1,5 +1,4 @@
 import React from 'react'
-import { AppSidebar } from '../../components/sidebar'
 import Mastercard from '../../components/mastercardUI';
 import Activity from '../../components/activity';
 import DashLogs from '../../components/dashlogs';
@@ -13,7 +12,7 @@ export default function page() {
   return (
     <>
       <div className='flex flex-col'>
-        <div className='flex items-center justify-evenly gap-20'>
+        <div className='flex items-center justify-evenly gap-[14rem]'>
           <div className='m-2'>
             <Greeting />
           </div>
@@ -22,7 +21,7 @@ export default function page() {
           </div>
         </div>
 
-        <div className='flex items-center justify-evenly'>
+        <div className='flex items-center justify-evenly gap-[8rem]'>
           <div className='m-2' >
             <Graph />
           </div>
@@ -30,7 +29,7 @@ export default function page() {
             <Mastercard />
           </div></div>
 
-        <div className='flex items-center justify-evenly'>
+        <div className='flex items-center justify-evenly gap-[3rem]'>
           <div className='m-2'>
             <DashLogs />
           </div>
