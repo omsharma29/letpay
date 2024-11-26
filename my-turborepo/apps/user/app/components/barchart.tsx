@@ -42,13 +42,13 @@ export default class Graph extends PureComponent {
 
   render() {
     return (
-      <Card>
+      <Card className="w-[650px]">
         <CardHeader>
           <CardTitle>Card Title</CardTitle>
           <CardDescription>Card Description</CardDescription>
         </CardHeader>
         <CardContent>
-          <div style={{ width: "500px", height: "400px" }}>
+          <div style={{ width: "550px", height: "400px" }}>
             <ResponsiveContainer>
               <BarChart data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
@@ -63,7 +63,7 @@ export default class Graph extends PureComponent {
           </div>
         </CardContent>
         <CardFooter>
-          <p>Card Footer</p>
+         
         </CardFooter>
       </Card>
 

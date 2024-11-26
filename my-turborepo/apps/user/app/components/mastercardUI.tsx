@@ -7,7 +7,7 @@ import Link from "next/link"
 
 export default function Mastercard() {
   return (
-    <div className="w-full max-w-xl p-6 bg-[#1C1B3B] rounded-3xl">
+    <div className="w-[400px] h-[500px] sticky max-w-xl p-6 bg-[#1C1B3B] rounded-3xl flex flex-col">
       <CardHeader className="p-4">
         <CardTitle className="text-2xl font-semibold text-white">My Card</CardTitle>
         <div className="mt-2">

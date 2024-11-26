@@ -48,7 +48,7 @@ export default function Activity() {
   }, [])
 
   return (
-    <Card className="w-full max-w-xl bg-[#1C1B3B] text-white border-0 shadow-lg">
+    <Card className="w-[400px] h-[500px] max-w-xl bg-[#1C1B3B] text-white border-0 shadow-lg rounded-[10px]">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-8">
         <CardTitle className="text-2xl font-bold">Activity</CardTitle>
         <Select defaultValue="month">

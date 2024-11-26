@@ -91,7 +91,7 @@ export default function DashLogs() {
                 className="object-contain"
               />
                 </div>
-                <span>Mcdonald's</span>
+                <span>Levis</span>
               </div>
             </TableCell>
             <TableCell className="text-gray-400">Fri,19 Apr 2020</TableCell>
@@ -100,6 +100,8 @@ export default function DashLogs() {
               <span className="text-emerald-400">Deposited</span>
             </TableCell>
           </TableRow>
+
+
           <TableRow className="border-0">
             <TableCell className="py-4">
               <div className="flex items-center gap-3">
@@ -112,7 +114,7 @@ export default function DashLogs() {
                 className="object-contain"
               />
                 </div>
-                <span>Levi's</span>
+                <span>Macdonald</span>
               </div>
             </TableCell>
             <TableCell className="text-gray-400">tue,19 Apr 2020</TableCell>
