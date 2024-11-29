@@ -35,9 +35,9 @@ const items = [
   },
   {
     title: "Settings",
-    url: "#",
+    url: "/wallet/setting",
     icon: Settings,
-    slug: "#",
+    slug: "setting",
   },
 ];
 

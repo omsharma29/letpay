@@ -6,8 +6,6 @@ import Graph from '../../components/barchart';
 import SearchBar from '../../components/searchbar';
 import TransactionLogs from '../../components/transactionlogs';
 
-
-
 export default function page() {
   return (
     <>

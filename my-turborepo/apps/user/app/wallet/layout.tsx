@@ -1,5 +1,8 @@
-"use client";
+import { getServerSession } from "next-auth";
 import { AppSidebar } from "../components/sidebar";
+import Providers from "../provider";
+import { authOption } from "../lib/credential";
+import { redirect } from "next/navigation";
 
 // export default function Layout({ children }: { children: React.ReactNode }) {
 //   return (
@@ -16,7 +19,12 @@ import { AppSidebar } from "../components/sidebar";
 //   );
 // } 
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default  async function Layout({ children }: { children: React.ReactNode }) {
+
+  const session = await getServerSession(authOption);
+  if (!session) {
+    redirect('/api/auth/signin');
+  }
   return (
     <html lang="en">
 
@@ -24,7 +32,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="flex h-screen ">
           <AppSidebar />
           <div className=" flex-1 overflow-y-auto ">
+            <Providers>
             {children}
+            </Providers>
           </div>
         </div>
       </body>
