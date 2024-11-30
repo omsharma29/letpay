@@ -32,7 +32,7 @@ export default function DepositForm() {
           {/* Payment Method Select */}
           <div className="space-y-1">
             <Label htmlFor="payment-method" className="text-white text-sm">Through (via)</Label>
-            <Select defaultValue="bank">
+            <Select defaultValue="hdfc">
               <SelectTrigger
                 id="payment-method"
                 className="bg-white text-black rounded-lg"
@@ -40,9 +40,9 @@ export default function DepositForm() {
                 <SelectValue placeholder="Select payment method" />
               </SelectTrigger>
               <SelectContent className="bg-[#141332] text-white">
+                <SelectItem value="hdfc">HDFC BANK</SelectItem>
+                <SelectItem value="axis">AXIS BANK</SelectItem>
                 <SelectItem value="card">CARD</SelectItem>
-                <SelectItem value="bank">BANK TRANSFER</SelectItem>
-                <SelectItem value="crypto">CRYPTOCURRENCY</SelectItem>
               </SelectContent>
             </Select>
           </div>

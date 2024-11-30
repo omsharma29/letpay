@@ -12,7 +12,7 @@ export default function Mastercard() {
         <CardTitle className="text-2xl font-semibold text-white">My Card</CardTitle>
         <div className="mt-2">
           <p className="text-sm text-gray-400">Card Balance</p>
-          <p className="text-3xl font-bold text-white">$15,595.015</p>
+          <p className="text-3xl font-bold text-white">Rs.15,595.015</p>
         </div>
       </CardHeader>
       <CardContent className="p-4 space-y-6">
@@ -22,7 +22,7 @@ export default function Mastercard() {
             <div className="flex justify-between items-start">
               <div>
                 <p className="text-sm text-white/70">Current Balance</p>
-                <p className="text-3xl font-bold text-white">$5,750.20</p>
+                <p className="text-3xl font-bold text-white">Rs.5,750.20</p>
               </div>
               <Image
                 src= {mastercard_logo}

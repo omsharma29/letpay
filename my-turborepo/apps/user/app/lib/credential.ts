@@ -133,7 +133,9 @@ export const authOption = {
             id: newUser.id.toString(),
             name: newUser.name,
             email: newUser.email,
+
           };
+
         } catch (error) {
           console.error(error);
           return null; // Handle errors (e.g., email already in use)
@@ -156,44 +158,47 @@ export const authOption = {
   secret: process.env.NEXTAUTH_SECRET || "secret",
 
   callbacks: {
-    // jwt callback is used to handle the creation or update of the user after login
-    async jwt({ token, account, profile }: any) {
-      // If the account is from Google, create or update the user
-      if (account?.provider === "google") {
-        const user = await prisma.user.upsert({
-          where: { email: profile?.email },
-          update: {}, // No updates for now, but you can update user fields here
-          create: {
-            name: profile?.name || profile?.email,
-            email: profile?.email,
-            password: "", // No password for Google userss
-            auth_type: "Google",
-          },
+    async session({ session, token }: any) {
+      if (token?.id) {
+          session.user.id = token.id;
+          session.user.email = token.email;
+          session.user.name = token.name;
+      }
+      return session;
+  },
+    
+  async jwt({ token, user, account, profile }: any) {
+    if (account?.provider === "google" && profile) {
+        const dbUser = await prisma.user.upsert({
+            where: { email: profile.email },
+            update: {}, // Add any necessary updates for existing users
+            create: {
+                name: profile.name || profile.email,
+                email: profile.email,
+                password: "", // Google users don't have passwords
+                auth_type: "Google",
+            },
         });
 
-        token.id = user.id.toString(); // Attach user ID to the token
-      }
+        token.id = dbUser.id; // Attach user ID to token
+        token.email = dbUser.email;
+        token.name = dbUser.name;
+    } else if (user) {
+        // For Credentials provider (user is directly passed from `authorize`)
+        token.id = user.id;
+        token.email = user.email;
+        token.name = user.name;
+    }
 
-      return token; // Return the updated token
+    return token;
+},
+
+    
+
+    async redirect({ baseUrl }: any) {
+      return baseUrl + "/wallet/dashboard"; 
     },
 
-    // session callback will attach the user ID to the session
-    async session({ session, token }: any) {
-      session.user.id = token.id;
-      return session;
-    },
 
-    // Redirect callback to handle post-login redirection
-    async redirect({ url, baseUrl }: any) {
-      return baseUrl + "/wallet/dashboard"; // Redirect to dashboard after login
-    },
-
-    // Optional: You can add checks for specific providers like Google
-    // async signIn({ account, profile }:any) {
-    //   if (account.provider === "google") {
-    //     return profile.email_verified && profile.email.endsWith("@gmail.com");
-    //   }
-    //   return true;
-    // },
   },
 };

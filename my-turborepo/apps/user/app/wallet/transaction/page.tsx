@@ -4,8 +4,12 @@ import Activity from '../../components/activity';
 import Greeting from '../../components/greeting';
 import TransactionLogs from '../../components/transactionlogs';
 import SearchBar from '../../components/searchbar';
+import {getOnRampTransaction} from '../../prismaApi/prismaApi'
 
-export default function Page() {
+
+export default async function Page() {
+  const transactions = await getOnRampTransaction();
+
   return (
     <>
       <div className="flex flex-col">
@@ -22,7 +26,7 @@ export default function Page() {
         {/* Middle Section: TransactionLogs and Mastercard */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="m-2 w-full md:w-auto">
-            <TransactionLogs />
+            <TransactionLogs transactions={transactions} />
           </div>
           <div className="m-2 w-full md:w-auto">
             <Mastercard />
