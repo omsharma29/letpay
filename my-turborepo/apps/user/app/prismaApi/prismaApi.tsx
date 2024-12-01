@@ -54,10 +54,13 @@ export async function getBalance() {
         const userId = Number(session.user.id);
 
         const balances = await prisma.balance.findMany({
-            where: { userId: userId },
-            include: { user: true }, // Ensure user relation is included
+            where: {
+                userId: userId, // Ensure filtering by userId
+               
+            },
+            include: { user: true }, // Include the user relation
         });
-
+        
         console.log("Raw Balance Data from Database:", balances);
 
         const result = balances.map((b) => ({
