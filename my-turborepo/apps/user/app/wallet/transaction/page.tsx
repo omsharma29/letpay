@@ -4,11 +4,13 @@ import Activity from '../../components/activity';
 import Greeting from '../../components/greeting';
 import TransactionLogs from '../../components/transactionlogs';
 import SearchBar from '../../components/searchbar';
-import {getOnRampTransaction} from '../../prismaApi/prismaApi'
+import {getBalance, getOnRampTransaction} from '../../prismaApi/prismaApi'
 
 
 export default async function Page() {
   const transactions = await getOnRampTransaction();
+  const balance = await getBalance()
+
 
   return (
     <>
@@ -29,7 +31,7 @@ export default async function Page() {
             <TransactionLogs transactions={transactions} />
           </div>
           <div className="m-2 w-full md:w-auto">
-            <Mastercard />
+            <Mastercard balance={balance} />
           </div>
         </div>
 

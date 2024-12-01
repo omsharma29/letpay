@@ -6,13 +6,14 @@ import Graph from '../../components/barchart';
 import SearchBar from '../../components/searchbar';
 import TransactionLogs from '../../components/transactionlogs';
 
-import {getOnRampTransaction} from '../../prismaApi/prismaApi'
+import {getBalance, getOnRampTransaction} from '../../prismaApi/prismaApi'
 
 
 
 export default async function Page() {
   // Fetching transactions
   const transactions = await getOnRampTransaction();
+  const balance = await getBalance()
 
   if (!Array.isArray(transactions)) {
     console.error('Transactions is not an array:', transactions);
@@ -37,7 +38,7 @@ export default async function Page() {
             <Graph />
           </div>
           <div className="m-2">
-            <Mastercard />
+            <Mastercard balance={balance} />
           </div>
         </div>
 

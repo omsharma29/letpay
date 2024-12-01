@@ -1,18 +1,35 @@
-"use client"
-import { Card, CardContent, CardHeader, CardTitle } from "@repo/ui/card"
-import { Button } from "@repo/ui/button"
-import Image from "next/image"
-import mastercard_logo from "./assets/mastercard_logo.png"
-import Link from "next/link"
+"use client";
+import { Card, CardContent, CardHeader, CardTitle } from "@repo/ui/card";
+import { Button } from "@repo/ui/button";
+import Image from "next/image";
+import mastercard_logo from "./assets/mastercard_logo.png";
+import Link from "next/link";
 
-export default function Mastercard() {
+type Transaction = {
+  amount: number;
+  locked: number;
+  username: string;
+};
+
+interface BalanceLogs {
+  balance: Transaction[];
+}
+
+export default function Mastercard({ balance }: BalanceLogs) {
+  const currentBalance = balance?.[0]?.amount
+    ? (balance[0].amount / 100).toFixed(2)
+    : "0.00";
+  const username = balance?.[0]?.username?.toUpperCase() || "No User";
+
   return (
     <div className="w-[400px] h-[500px] sticky max-w-xl p-6 bg-[#1C1B3B] rounded-3xl flex flex-col">
       <CardHeader className="p-4">
-        <CardTitle className="text-2xl font-semibold text-white">My Card</CardTitle>
+        <CardTitle className="text-2xl font-semibold text-white">
+          My Card
+        </CardTitle>
         <div className="mt-2">
           <p className="text-sm text-gray-400">Card Balance</p>
-          <p className="text-3xl font-bold text-white">Rs.15,595.015</p>
+          <p className="text-3xl font-bold text-white">Rs. {currentBalance}</p>
         </div>
       </CardHeader>
       <CardContent className="p-4 space-y-6">
@@ -22,10 +39,10 @@ export default function Mastercard() {
             <div className="flex justify-between items-start">
               <div>
                 <p className="text-sm text-white/70">Current Balance</p>
-                <p className="text-3xl font-bold text-white">Rs.5,750.20</p>
+                <p className="text-3xl font-bold text-white">Rs. {currentBalance}</p>
               </div>
               <Image
-                src= {mastercard_logo}
+                src={mastercard_logo}
                 alt="Mastercard Logo"
                 width={60}
                 height={38}
@@ -33,9 +50,7 @@ export default function Mastercard() {
               />
             </div>
             <div>
-              <p className="text-xl text-white tracking-wider mb-2">
-                5282 3456 7890 1289
-              </p>
+              <p className="text-xl text-white tracking-wider mb-2">{username}</p>
               <p className="text-sm text-white/70">09/25</p>
             </div>
           </div>
@@ -46,20 +61,20 @@ export default function Mastercard() {
         {/* Action Buttons */}
         <div className="grid grid-cols-2 gap-6">
           <Link href="/wallet/account">
-          <Button 
-            className="w-full bg-[#7B61FF] hover:bg-[#6B51FF] text-white rounded-xl h-14 text-lg"
-          >
-            Deposit
-          </Button></Link>
+            <Button className="w-full bg-[#7B61FF] hover:bg-[#6B51FF] text-white rounded-xl h-14 text-lg">
+              Deposit
+            </Button>
+          </Link>
           <Link href="/wallet/transfer">
-          <Button 
-            variant="outline" 
-            className="w-full border-[#7B61FF] text-[#7B61FF] hover:bg-[#7B61FF]/10 rounded-xl h-14 text-lg"
-          >
-            Transfer
-          </Button></Link>
+            <Button
+              variant="outline"
+              className="w-full border-[#7B61FF] text-[#7B61FF] hover:bg-[#7B61FF]/10 rounded-xl h-14 text-lg"
+            >
+              Transfer
+            </Button>
+          </Link>
         </div>
       </CardContent>
     </div>
-  )
+  );
 }
