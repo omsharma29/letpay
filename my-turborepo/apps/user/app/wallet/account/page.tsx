@@ -4,8 +4,11 @@ import Activity from '../../components/activity';
 import DepositForm from '../../components/deposite';
 import Greeting from '../../components/greeting';
 import SearchBar from '../../components/searchbar';
+import { getBalance } from '../../prismaApi/prismaApi';
 
-export default function Page() {
+export default async function Page() {
+  const balance = await getBalance()
+
   return (
     <>
       <div className="flex flex-col">
@@ -24,7 +27,7 @@ export default function Page() {
             <DepositForm />
           </div>
           <div className="m-2">
-            <Mastercard />
+          <Mastercard balance={balance} />
           </div>
         </div>
 

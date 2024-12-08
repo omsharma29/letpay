@@ -44,7 +44,7 @@ model Balance {
 
 model OnRampTransaction {
   id Int @id @default(autoincrement())
-  userId Int @unique
+  userId Int 
   amount Int
   startTime  DateTime
   token     String       @unique
