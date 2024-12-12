@@ -2,12 +2,21 @@ import express from 'express';
 import prisma from '@repo/db/client'
 
 const app = express()
+
+app.use(express.json());
+
 app.post('/hdfcwebhook', async (req, res) => {
-    const paymentinfo = {
+    // CHECK WETHER THE TXN IS PROCESSING OR NOT
+    const paymentinfo: {
+        token: string;
+        userId: number;
+        amount: number
+    } = {
         token: req.body.token,
         userId: req.body.user_identifier,
         amount: req.body.amount
-    }
+    };
+
 
     try {
         await prisma.$transaction([

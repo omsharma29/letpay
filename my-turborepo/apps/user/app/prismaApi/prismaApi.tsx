@@ -2,7 +2,7 @@ import prisma from '@repo/db/client';
 import { getServerSession } from "next-auth";
 import { authOption } from "../lib/credential";
 import React from 'react';
-import TransactionLogs from '../components/transactionlogs';
+import TransactionLogs from '../components/Banktransactionlogs';
 import Mastercard from '../components/mastercardUI';
 import { log } from 'console';
 

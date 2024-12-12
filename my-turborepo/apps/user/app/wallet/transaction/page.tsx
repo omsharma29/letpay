@@ -2,7 +2,7 @@ import React from 'react';
 import Mastercard from '../../components/mastercardUI';
 import Activity from '../../components/activity';
 import Greeting from '../../components/greeting';
-import TransactionLogs from '../../components/transactionlogs';
+import TransactionLogs from '../../components/Banktransactionlogs';
 import SearchBar from '../../components/searchbar';
 import {getBalance, getOnRampTransaction} from '../../prismaApi/prismaApi'
 

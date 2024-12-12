@@ -25,6 +25,11 @@ model User {
   Balance Balance[]
 
   OnRampTransaction OnRampTransaction[]
+
+  sentTransafer P2pTransaction[] @relation(name: "FromUserRelation")
+  recievedTransfer P2pTransaction[] @relation(name: "ToUserRelation")
+
+   @@unique([id, name])
 }
 
 model Merchant {
@@ -40,6 +45,19 @@ model Balance {
   amount Int 
   locked Int
   user User @relation(fields: [userId], references: [id])
+}
+
+model P2pTransaction {
+  id Int @id @default(autoincrement()) @unique
+  amount Int 
+  fromUserId Int
+  fromUserName String
+  fromUser User @relation(name: "FromUserRelation", fields: [fromUserId, fromUserName], references: [id, name])
+  toUserId Int
+  toUserName String
+  toUser User @relation(name: "ToUserRelation", fields: [toUserId, toUserName], references: [id, name])
+  timeStamp DateTime
+
 }
 
 model OnRampTransaction {

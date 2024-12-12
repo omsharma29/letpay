@@ -12,6 +12,7 @@ export default async function p2pTransfer(to: string, amount: number) {
   }
 
   const from = session.user.id;
+  const fromName = session.user.name; 
 
   const toUser = await prisma.user.findFirst({
     where: { email: to },
@@ -22,6 +23,9 @@ export default async function p2pTransfer(to: string, amount: number) {
   }
 
   await prisma.$transaction(async (tnx) => {
+
+    await tnx.$queryRaw`SELECT * FROM "Balance" WHERE "userId" = ${Number(from)} FOR UPDATE `;
+
     const fromBalance = await tnx.balance.findUnique({
       where: { userId: Number(from) },
     });
@@ -41,6 +45,18 @@ export default async function p2pTransfer(to: string, amount: number) {
       where: { userId: Number(toUser.id) },
       data: { amount: { increment: amount } },
     });
+
+    await tnx.p2pTransaction.create({
+      data : {
+        amount,
+        timeStamp : new Date(),
+        fromUserId : from,
+        fromUserName: fromName,
+        toUserId : toUser.id,
+        toUserName : toUser.name
+      }
+    })
+    
   });
 
   return { message: "Transfer successful" };

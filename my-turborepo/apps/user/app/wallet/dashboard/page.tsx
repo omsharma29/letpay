@@ -4,7 +4,7 @@ import Activity from '../../components/activity';
 import Greeting from '../../components/greeting';
 import Graph from '../../components/barchart';
 import SearchBar from '../../components/searchbar';
-import TransactionLogs from '../../components/transactionlogs';
+import TransactionLogs from '../../components/Banktransactionlogs';
 
 import {getBalance, getOnRampTransaction} from '../../prismaApi/prismaApi'
 
