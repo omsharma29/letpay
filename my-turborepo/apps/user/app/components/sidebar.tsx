@@ -1,6 +1,6 @@
 "use client";
 
-import { BadgeDollarSign, LayoutDashboard, Inbox, ArrowLeftRight, Settings, PanelRightClose } from "lucide-react";
+import { BadgeDollarSign, LayoutDashboard,  ArrowLeftRight, Settings, PanelRightClose } from "lucide-react";
 import Image from "next/image";
 import logo from "./assets/Subtract.png";
 import { useState } from "react";
