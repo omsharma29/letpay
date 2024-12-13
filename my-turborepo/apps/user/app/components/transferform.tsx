@@ -14,6 +14,8 @@ export default function TransferForm() {
     try {
       const response = await p2pTransfer(email, Number(amount) * 100);
       setMessage(response.message || "Transfer successful!");
+      if (response.message) {
+        window.location.reload()}
     } catch (error: any) {
       setMessage(error.message || "Something went wrong.");
     }
@@ -23,15 +25,15 @@ export default function TransferForm() {
     <div className="flex items-center justify-center p-4 bg-[#1C1B3B] rounded-[30px]">
       <div
         className="bg-[#1C1B3B] border border-gray-700 rounded-[30px] p-4 flex flex-col"
-        style={{ width: "531px", height: "320px" }}
+        style={{ width: "530px", height: "400px" }}
       >
-        <div className="space-y-1 mb-3">
+        <div className="space-y-1 mb-3 mt-5">
           <h1 className="text-lg font-bold text-white">PAYMENT</h1>
           <p className="text-xs text-gray-400">Pay to whom you wish</p>
         </div>
-        <div className="space-y-3 flex-grow">
+        <div className="space-y-8 flex-grow">
           {/* Recipient Email */}
-          <div className="space-y-1">
+          <div className="">
             <label className="text-sm text-gray-400">To</label>
             <Input
               type="text"

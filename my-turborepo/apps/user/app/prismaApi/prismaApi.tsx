@@ -4,7 +4,7 @@ import { authOption } from "../lib/credential";
 import React from 'react';
 import TransactionLogs from '../components/Banktransactionlogs';
 import Mastercard from '../components/mastercardUI';
-import { log } from 'console';
+import P2pLogs from '../components/p2pTransactionLogs';
 
 export async function getOnRampTransaction() {
     try {
@@ -40,8 +40,50 @@ export async function getOnRampTransaction() {
     }
 }
 
+export async function P2pTxnLogs() {
+    const session = await getServerSession(authOption);
+    const userId = session?.user?.id;
+  
+    if (!userId) {
+      console.log("No user id");
+      return [];
+    }
+  
+    console.log("Current User ID:", userId);
 
 
+
+
+
+  
+    const p2p = await prisma.p2pTransaction.findMany({
+      where: {
+        OR : [
+            {fromUserId : userId},
+            {toUserId : userId}
+        ]
+      },
+      orderBy : {
+        timeStamp : 'desc'
+      }
+    });
+
+
+    // console.log("Sent Transactions:", p2p);
+    return p2p.map((t)=>({
+        Fromname : t.fromUserName,
+        amount : t.amount,
+        Toname : t.toUserName,
+        time : t.timeStamp,
+        status: t.fromUserId == userId ? "Sent" : "Recieved"
+    }))
+  
+    
+  
+  
+  }
+  
+  
 export async function getBalance() {
     try {
         const session = await getServerSession(authOption);
@@ -83,10 +125,12 @@ export async function getBalance() {
 export  async function Page() {
     const transactions = await getOnRampTransaction();
     const balance  = await getBalance();
+    const p2p = await P2pTxnLogs()
 
     console.log('Transactions received:', transactions);
 
     const transactionArray = Object.values(transactions);
+    const p2pArray = Object.values(p2p);
 
     console.log("balance" , balance)
 
@@ -95,6 +139,7 @@ export  async function Page() {
         
             <Mastercard balance={balance}/>
             <TransactionLogs transactions={transactionArray} />
+            <P2pLogs p2p={p2pArray}/>
         </>
     );
 }

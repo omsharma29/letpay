@@ -5,36 +5,31 @@ import Image from "next/image";
 import logo from "./assets/Subtract.png";
 import { useState } from "react";
 import { cn } from "../lib/utils";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
+import Link from "next/link";  // Import Link from next/link
 
 // Menu items
 const items = [
   {
-    title: "Dashboard",
+    title: "Dashboard  ",
     url: "/wallet/dashboard",
     icon: LayoutDashboard,
     slug: "dashboard",
   },
   {
-    title: "Transaction Logs",
-    url: "/wallet/transaction",
-    icon: Inbox,
-    slug: "transaction",
-  },
-  {
-    title: "Account",
+    title: "Balance   ",
     url: "/wallet/account",
     icon: BadgeDollarSign,
     slug: "account",
   },
   {
-    title: "Transfer",
+    title: "Transfer  ",
     url: "/wallet/transfer",
     icon: ArrowLeftRight,
     slug: "transfer",
   },
   {
-    title: "Settings",
+    title: "Settings  ",
     url: "/wallet/setting",
     icon: Settings,
     slug: "setting",
@@ -43,14 +38,8 @@ const items = [
 
 export function AppSidebar() {
   const [isSideBar, setSideBar] = useState<boolean>(false);
-  const router = useRouter();
   const pathname = usePathname();
   const slug = pathname.split("/").pop();
-
-  const handleItemClick = (url: string) => {
-    router.push(url); // Navigate to the selected URL
-    setSideBar(false); // Optionally close the sidebar after navigation
-  };
 
   return (
     <>
@@ -69,17 +58,17 @@ export function AppSidebar() {
 
         {/* Menu Items */}
         {items.map((item, index) => (
-          <div
-            key={index}
-            onClick={() => handleItemClick(item.url)} // Use handleItemClick on click
-            className={cn(
-              "flex items-center gap-4 p-2 hover:bg-[#6359E9] rounded-lg transition cursor-pointer",
-              slug === item.slug && "bg-[#6359E9]" // Highlight active menu item
-            )}
-          >
-            <item.icon className="w-6 h-6" />
-            <span className="font-medium">{item.title}</span>
-          </div>
+          <Link href={item.url} key={index} passHref>
+            <div
+              className={cn(
+                "flex items-center gap-4 p-2 hover:bg-[#6359E9] rounded-lg transition cursor-pointer",
+                slug === item.slug && "bg-[#6359E9]" // Highlight active menu item
+              )}
+            >
+              <item.icon className="w-6 h-6" />
+              <span className="font-medium">{item.title}</span>
+            </div>
+          </Link>
         ))}
       </div>
 

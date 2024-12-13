@@ -46,7 +46,7 @@ export default function TransactionLogs({ transactions = [] }: TransactionLogsPr
         <div className="relative flex items-center gap-4">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
           <Input
-            placeholder="Search for anything..."
+            placeholder="Search for Banks..."
             className="w-[280px] bg-[#252451] border-0 pl-10 text-white placeholder:text-gray-400 focus-visible:ring-0"
           />
         </div>

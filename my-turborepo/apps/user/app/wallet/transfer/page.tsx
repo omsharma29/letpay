@@ -4,10 +4,13 @@ import Activity from '../../components/activity';
 import TransferForm from '../../components/transferform';
 import Greeting from '../../components/greeting';
 import SearchBar from '../../components/searchbar';
-import { getBalance } from '../../prismaApi/prismaApi';
+import { getBalance, P2pTxnLogs } from '../../prismaApi/prismaApi';
+import P2pLogs from '../../components/p2pTransactionLogs';
 
 export default async function Page() {
   const balance = await getBalance()
+  const p2plogs = await P2pTxnLogs()
+  
 
   return (
     <>
@@ -32,10 +35,10 @@ export default async function Page() {
           </div>
         </div>
 
-        {/* Bottom Section: Activity */}
-        <div className="flex items-end justify-end">
-          <div className="mx-3 px-7">
-            <Activity />
+        {/* Bottom Section: P2P Logs */}
+        <div className="flex justify-center w-full mt-5">
+          <div className="w-full max-w-full px-4">
+            <P2pLogs p2p={p2plogs} />
           </div>
         </div>
       </div>
