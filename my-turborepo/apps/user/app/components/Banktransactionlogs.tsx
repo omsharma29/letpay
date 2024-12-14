@@ -40,14 +40,14 @@ export default function TransactionLogs({ transactions = [] }: TransactionLogsPr
   const displayedTransactions = isDashboard ? transactions.slice(0, 3) : transactions;
 
   return (
-    <div className="w-full max-w-4xl p-6 bg-[#1C1B3B] rounded-3xl text-white">
+    <div className="w-full md:max-w-4xl p-6 bg-[#1C1B3B] rounded-3xl text-white">
       <div className="flex items-center justify-between mb-8 gap-1 md:gap-[10rem] ">
         <h2 className="text-2xl font-semibold md:whitespace-nowrap">Bank Transaction</h2>
         <div className="relative flex items-center gap-4">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
           <Input
             placeholder="Search for Banks..."
-            className="w-[280px] bg-[#252451] border-0 pl-10 text-white placeholder:text-gray-400 focus-visible:ring-0"
+            className="w-[100px] sm:w-[280px] bg-[#252451] border-0 pl-10 text-white placeholder:text-gray-400 focus-visible:ring-0"
           />
         </div>
       </div>

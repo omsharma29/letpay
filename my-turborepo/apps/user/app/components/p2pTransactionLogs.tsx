@@ -1,7 +1,6 @@
 "use client";
 
 import { Input } from "@repo/ui/input";
-import { Button } from "@repo/ui/button";
 import { Search } from "lucide-react";
 import { usePathname } from "next/navigation";
 
@@ -40,7 +39,7 @@ export default function P2pLogs({ p2p }: p2plogs) {
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
           <Input
             placeholder="Search for People..."
-            className="w-[280px] bg-[#252451] border pl-10"
+            className="w-[100px] md:w-[280px] bg-[#252451] border pl-10"
           />
         </div>
       </div>

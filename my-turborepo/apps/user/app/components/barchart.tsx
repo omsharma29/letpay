@@ -21,8 +21,6 @@ import {
   CardTitle,
 } from "@repo/ui/card"
 
-
-
 const data = [
   { name: "Jan", uv: 4000, pv: 2400, amt: 2400 },
   { name: "Feb", uv: 3000, pv: 1398, amt: 2210 },
@@ -42,14 +40,14 @@ export default class Graph extends PureComponent {
 
   render() {
     return (
-      <Card className="w-[650px]">
+      <Card className="w-full md:w-[650px]">
         <CardHeader>
           <CardTitle>Card Title</CardTitle>
           <CardDescription>Card Description</CardDescription>
         </CardHeader>
         <CardContent>
-          <div style={{ width: "550px", height: "400px" }}>
-            <ResponsiveContainer>
+          <div className="w-full h-[300px] sm:h-[400px]">
+            <ResponsiveContainer width="100%" height="100%">
               <BarChart data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
@@ -63,10 +61,8 @@ export default class Graph extends PureComponent {
           </div>
         </CardContent>
         <CardFooter>
-         
         </CardFooter>
       </Card>
-
     );
   }
 }

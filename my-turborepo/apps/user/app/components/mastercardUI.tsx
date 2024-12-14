@@ -22,7 +22,7 @@ export default function Mastercard({ balance }: BalanceLogs) {
   const username = balance?.[0]?.username?.toUpperCase() || "No User";
 
   return (
-    <div className="w-[400px] h-[500px] sticky max-w-xl p-6 bg-[#1C1B3B] rounded-3xl flex flex-col">
+    <div className=" w-full md:w-[400px] md:h-[500px] sticky max-w-xl p-6 bg-[#1C1B3B] rounded-3xl flex flex-col">
       <CardHeader className="p-4">
         <CardTitle className="text-2xl font-semibold text-white">
           My Card
