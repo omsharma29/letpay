@@ -15,7 +15,7 @@ export default function Logout() {
   return (
     <div>
       {/* Corrected the onClick to call handleLogout */}
-      <Button onClick={handleLogout}>Logout</Button>
+      <Button className="bg-[#6359E9] text-white" onClick={handleLogout}>Logout</Button>
     </div>
   );
 }

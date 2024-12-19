@@ -11,7 +11,7 @@ export default function Signin() {
 
   return (
     <>
-      <Button onClick={handleSignIn}>Sign In</Button>
+      <Button className="bg-[#6359E9] text-white" onClick={handleSignIn}>Sign In</Button>
     </>
   );
 }
