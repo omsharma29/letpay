@@ -1,0 +1,10 @@
+.divider{
+    aspect-ratio: 960/300;
+    background: no-repeat center;
+    background-size: cover;
+
+}
+
+.wave1{
+    background-image: url('./svgs/wave1.svg');
+}

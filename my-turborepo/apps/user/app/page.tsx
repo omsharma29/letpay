@@ -7,27 +7,22 @@ import { Button } from "@repo/ui/button";
 import Image from 'next/image';
 import MainImage from './components/assets/MainLogo.png'
 import Header from "./components/header";
-import Vector1 from "./components/assets/Vector1.png"
+import './main.css'
+import ShowCase from "./components/ShowCase";
 
 async function Home() {
 
-  const backgroundImageStyle = {
-    backgroundImage: `url(${Vector1})`, // Get the image source
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    height: '100vh', // Adjust as needed
-  };
+
   return (
     <div className="flex flex-col">
 
-        <div >
-      
+   
 
-      <div className="flex justify-center pt-3">
+      <div className="flex justify-center pt-3 bg-gradient-to-r from-custom-black to-custom-blue h-74 w-full">
         <Header/>
       </div>
 
-      <div className="flex flex-row justify-around">
+      <div className="flex flex-row justify-around bg-gradient-to-r from-custom-black to-custom-blue h-74 w-full">
         <div className="pt-[80px]">
           <h1 className="text-[54px] leading-none font-bold font-openSans">
             Secure Your Funds, <br></br>
@@ -49,14 +44,15 @@ async function Home() {
         </div>
       </div>
 
-
-</div>
-
+<div className="divider wave1"></div>
 
 
-
-
-      <div className="section2"></div>
+      <div className="section2">
+          <div>
+            <ShowCase/>
+          </div>
+          <div></div>
+      </div>
 
       <div className="section3"></div>
 
