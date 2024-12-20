@@ -1,10 +1,20 @@
-<svg id="visual" viewBox="0 0 960 300" width="960" height="300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<svg id="visual" viewBox="0 0 960 10" width="960" height="10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
   <defs>
-    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+    <!-- Define the linear gradient from left to right -->
+    <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#080814" />
       <stop offset="100%" stop-color="#13122F" />
     </linearGradient>
   </defs>
-  <rect x="0" y="0" width="960" height="300" fill="#141332"></rect>
-  <path d="M0 53L16 51.7C32 50.3 64 47.7 96 52.5C128 57.3 160 69.7 192 71.3C224 73 256 64 288 64C320 64 352 73 384 80.8C416 88.7 448 95.3 480 90.3C512 85.3 544 68.7 576 63C608 57.3 640 62.7 672 67.8C704 73 736 78 768 80.3C800 82.7 832 82.3 864 83.7C896 85 928 88 944 89.5L960 91L960 0L944 0C928 0 896 0 864 0C832 0 800 0 768 0C736 0 704 0 672 0C640 0 608 0 576 0C544 0 512 0 480 0C448 0 416 0 384 0C352 0 320 0 288 0C256 0 224 0 192 0C160 0 128 0 96 0C64 0 32 0 16 0L0 0Z" fill="url(#gradient)" stroke-linecap="round" stroke-linejoin="miter"></path>
+  
+  <!-- Background rect -->
+  <rect x="0" y="0" width="960" height="1" fill= "#fffff"></rect>
+  
+  <!-- Path with linear gradient fill -->
+  <path 
+    d="M0 3L22.8 3.2C45.7 3.3 91.3 3.7 137 3.3C182.7 3 228.3 2 274 2.2C319.7 2.3 365.3 3.7 411.2 3.8C457 4 503 3 548.8 2.7C594.7 2.3 640.3 2.7 686 2.8C731.7 3 777.3 3 823 3C868.7 3 914.3 3 937.2 3L960 3L960 0L937.2 0C914.3 0 868.7 0 823 0C777.3 0 731.7 0 686 0C640.3 0 594.7 0 548.8 0C503 0 457 0 411.2 0C365.3 0 319.7 0 274 0C228.3 0 182.7 0 137 0C91.3 0 45.7 0 22.8 0L0 0Z" 
+    fill="url(#gradient)" 
+    stroke-linecap="round" 
+    stroke-linejoin="miter">
+  </path>
 </svg>

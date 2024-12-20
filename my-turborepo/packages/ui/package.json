@@ -13,7 +13,8 @@
     "./input": "./src/input.tsx",
     "./table": "./src/table.tsx",
     "./textarea": "./src/textarea.tsx",
-    "./label": "./src/label.tsx"
+    "./label": "./src/label.tsx",
+    "./testimonials" : "./src/animated-testimonials.tsx"
   },
   "main": "./components/button.tsx",
   "scripts": {
@@ -40,8 +41,10 @@
     "@radix-ui/react-separator": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-tooltip": "^1.1.4",
+    "@tabler/icons-react": "^3.26.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "framer-motion": "^11.15.0",
     "lucide-react": "^0.460.0",
     "react": "^18.2.0",
     "recharts": "^2.13.3",
