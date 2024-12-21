@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@repo/ui/button";
 import Image from 'next/image';
-import MainImage from './components/assets/MainLogo.png'
+import MainLogo from './components/MainLogoAnimated'
 import Header from "./components/header";
 import './main.css'
 import ShowCase from "./components/ShowCase";
@@ -12,6 +12,9 @@ import Bgpng from './components/assets/bg_.png'
 import Banner from "./components/banner";
 import Footer from "./components/Footer";
 import Testimonials from "./components/Testimonials"
+import DashbaordImage from "./components/DashboardAnimatedImage";
+import { TransferForm } from "./components/TransferFormAnimatedImage";
+import { TransactionalForm } from "./components/TransactionalLogsAnimatedImage";
 
 async function Home() {
 
@@ -38,9 +41,7 @@ async function Home() {
             <Button className="text-[#6359E9] font-openSans hover:bg-[#6359E9] hover:text-white">Start Now</Button>
           </Link>
         </div>
-        <div>
-          <Image src={MainImage} alt="Main Image" width={559} height={531.82} />
-        </div>
+        <MainLogo />
       </div>
 
 
@@ -98,23 +99,14 @@ async function Home() {
             </p>
           </div>
 
-          <div>
-            <Image src={Dashboard} alt="Dashboard" width={645} height={446} />
-          </div>
+          <DashbaordImage />
         </div>
 
 
 
         {/*section 4*/}
         <div className=" flex lg:flex-row relative lg:justify-around py-12 flex-col items-center">
-          <div>
-            <Image
-              src={TransferFormImage}
-              alt="TransferFormImage"
-              width={645}
-              height={446}
-            />
-          </div>
+          <TransferForm />
           <div className="relative lg:pt-[120px] pt-[50px]">
             <h1 className="font-openSans font-bold text-[40px] leading-10 relative">
               <span className="relative z-10">Smart</span>
@@ -164,14 +156,7 @@ async function Home() {
             </p>
           </div>
 
-          <div>
-            <Image
-              src={TransactionLogsImage}
-              alt="TransactionLogsImage"
-              width={645}
-              height={446}
-            />
-          </div>
+          <TransactionalForm />
 
         </div>
       </div>
