@@ -5,9 +5,7 @@ import MainLogo from './components/MainLogoAnimated'
 import Header from "./components/header";
 import './main.css'
 import ShowCase from "./components/ShowCase";
-import Dashboard from './components/assets/Dashboard.png'
-import TransactionLogsImage from './components/assets/Logs.png'
-import TransferFormImage from './components/assets/TransferForm.png'
+
 import Bgpng from './components/assets/bg_.png'
 import Banner from "./components/banner";
 import Footer from "./components/Footer";
