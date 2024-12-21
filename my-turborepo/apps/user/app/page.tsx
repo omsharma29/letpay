@@ -22,8 +22,13 @@ async function Home() {
 
 
       {/*Header*/}
-      <div className="hidden md:flex justify-center pt-3 bg-gradient-to-r from-custom-black to-custom-blue h-74 w-full">
+      <div className=" hidden md:flex justify-center pt-3 bg-gradient-to-r from-custom-black to-custom-blue h-74 w-full">
         <Header />
+      </div>
+
+      {/*header for small screen*/}
+      <div className="block md:hidden w-[50%] h-screen absolute  z-50 top-0 left-0">
+        <Header /> {/* You can customize this header for small screens if needed */}
       </div>
 
       {/*Hero Section*/}
@@ -45,7 +50,7 @@ async function Home() {
 
 
       {/*section 2*/}
-      <div className="hidden md:gap-7 md:flex md:flex-rows md:relative justify-around pb-12 mt-[5rem]"> {/* Removed margin-top or adjusted as needed */}
+      <div className="hidden md:gap-7 md:flex md:flex-rows md:relative justify-around pb-12  mt-[5rem]"> {/* Removed margin-top or adjusted as needed */}
         <div className="md:px-3">
           <ShowCase />
         </div>
@@ -74,7 +79,7 @@ async function Home() {
 
       <div className="bg-[#0F0E25]">
         {/*section 3*/}
-        <div className="flex lg:flex-row relative lg:justify-around py-12 flex-col-reverse items-center">
+        <div className="flex lg:flex-row relative lg:justify-around py-12 sm:px-10 flex-col-reverse items-center">
           <div className="relative lg:pt-[120px] pt-[50px]">
             <h1 className="font-openSans font-bold text-[40px] leading-10 relative">
               <span className="relative z-10">Daily Amount </span>

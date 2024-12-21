@@ -14,7 +14,7 @@ export function TransactionalForm() {
         animate={{ x: 0, opacity: 1 }} // Animate into view
         transition={{ type: "spring", stiffness: 50, damping: 15 }} // Smooth transition
         whileInView={{
-          scale: [1, 1.1], // Scale from 1 to 1.1 when in view
+          scale: [1, 1.05], // Scale from 1 to 1.1 when in view
           transition: { duration: 0.5 }, // Smooth scaling transition
         }}
         whileHover={{

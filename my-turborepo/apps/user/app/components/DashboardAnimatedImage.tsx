@@ -14,7 +14,7 @@ export default function DashbaordImage() {
         animate={{ x: 0, opacity: 1 }} // Animate into view
         transition={{ type: "spring", stiffness: 50, damping: 15 }} // Smooth transition
         whileInView={{
-          scale: [1, 1.1], // Scale from 1 to 1.1 when the image enters the viewport
+          scale: [1, 1.05], // Scale from 1 to 1.1 when the image enters the viewport
           transition: { duration: 0.5 }, // Smooth scaling transition
         }}
         whileHover={{
