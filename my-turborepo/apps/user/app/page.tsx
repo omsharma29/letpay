@@ -21,13 +21,13 @@ async function Home() {
 
 
       {/*Header*/}
-      <div className="flex justify-center pt-3 bg-gradient-to-r from-custom-black to-custom-blue h-74 w-full">
+      <div className="hidden md:flex justify-center pt-3 bg-gradient-to-r from-custom-black to-custom-blue h-74 w-full">
         <Header />
       </div>
 
       {/*Hero Section*/}
-      <div className="flex flex-row justify-around bg-gradient-to-r from-custom-black to-custom-blue h-74 w-full p-6">
-        <div className="pt-[80px]">
+      <div className="flex md:flex-row md:justify-around flex-col items-center bg-gradient-to-r from-custom-black to-custom-blue h-74 w-full p-6">
+        <div className="md:pt-[80px] py-[20px]">
           <h1 className="text-[54px] leading-none font-bold font-openSans">
             Secure Your Funds, <br />
             <span className="text-[#6359E9] font-openSans">Simplify Your Payments!</span>
@@ -43,9 +43,11 @@ async function Home() {
         </div>
       </div>
 
+
+
       {/*section 2*/}
-      <div className="flex flex-rows relative justify-around pb-12 mt-[5rem]"> {/* Removed margin-top or adjusted as needed */}
-        <div>
+      <div className="hidden md:gap-7 md:flex md:flex-rows md:relative justify-around pb-12 mt-[5rem]"> {/* Removed margin-top or adjusted as needed */}
+        <div className="md:px-3">
           <ShowCase />
         </div>
         <div className="relative">
@@ -56,7 +58,7 @@ async function Home() {
               alt="Bgpng"
               width={88}
               height={91}
-              className="absolute bottom-0 left-0 z-0"
+              className="absolute lg:bottom-[1.3rem] md:bottom-10  left-0 z-0"
             />
             & Share <span className="font-openSans font-bold text-[#6359E9] text-[40px] leading-10">Payments</span>
           </h1>
@@ -71,12 +73,10 @@ async function Home() {
       </div>
 
 
-
       <div className="bg-[#0F0E25]">
         {/*section 3*/}
-        <div className=" flex flex-rows relative justify-around  py-12">
-
-          <div className="relative pt-[120px]">
+        <div className="flex lg:flex-row relative lg:justify-around py-12 flex-col-reverse items-center">
+          <div className="relative lg:pt-[120px] pt-[50px]">
             <h1 className="font-openSans font-bold text-[40px] leading-10 relative">
               <span className="relative z-10">Daily Amount </span>
               <Image
@@ -86,32 +86,27 @@ async function Home() {
                 height={91}
                 className="absolute bottom-0 left-0 z-0"
               />
-
             </h1>
             <h1 className="font-openSans font-bold text-[#6359E9] text-[40px] leading-10 pb-3">
               Tracking
             </h1>
             <p className="font-openSans tracking-tighter">
-              Stay on top of your finances with a  <br />
-              detailed dashboard featuring graphs  <br />
+              Stay on top of your finances with a <br />
+              detailed dashboard featuring graphs <br />
               to track your spending. Easily monitor <br />
               your balance and transactions with Let'sPay
             </p>
           </div>
 
           <div>
-            <Image
-              src={Dashboard}
-              alt="Dashboard"
-              width={645}
-              height={446}
-            />
+            <Image src={Dashboard} alt="Dashboard" width={645} height={446} />
           </div>
-
         </div>
 
+
+
         {/*section 4*/}
-        <div className=" flex flex-rows relative justify-around py-12">
+        <div className=" flex lg:flex-row relative lg:justify-around py-12 flex-col items-center">
           <div>
             <Image
               src={TransferFormImage}
@@ -120,7 +115,7 @@ async function Home() {
               height={446}
             />
           </div>
-          <div className="relative pt-[120px]">
+          <div className="relative lg:pt-[120px] pt-[50px]">
             <h1 className="font-openSans font-bold text-[40px] leading-10 relative">
               <span className="relative z-10">Smart</span>
               <Image
@@ -143,15 +138,11 @@ async function Home() {
           </div>
         </div>
 
-
-
-
-
         {/*section 5*/}
-        <div className=" flex flex-rows relative justify-around py-12">
+        <div className=" flex lg:flex-row relative lg:justify-around py-12 flex-col-reverse items-center">
 
-          <div className="relative pt-[120px]">
-            <h1 className="font-openSans font-bold text-[40px] leading-10 relative">
+          <div className="relative lg:pt-[120px] pt-[50px]">
+            <h1 className="font-openSans font-bold text-[40px] leading-10 relative ">
               <span className="relative z-10">Records</span>
               <Image
                 src={Bgpng}
@@ -183,21 +174,22 @@ async function Home() {
           </div>
 
         </div>
-
       </div>
+
+
 
       <div className="bg-gradient-to-r from-custom-black to-custom-blue">
         {/*section 6 customer review*/}
         <div className="flex flex-col items-center justify-center py-12 gap-4 relative">
           <div className="relative flex items-center">
-            <h1 className="font-openSans font-bold text-[40px] leading-none relative flex items-center">
+            <h1 className="font-openSans font-bold text-[40px] leading-none relative flex items-center flex-wrap ml-4">
               <span className="relative z-10 whitespace-nowrap">What Our</span>
               <Image
                 src={Bgpng}
                 alt="Bgpng"
                 width={88}
                 height={91}
-                className="absolute bottom-0 left-0 z-0"
+                className="absolute lg:bottom-0 bottom-10 left-0 z-0"
               />
               <span className="text-[#6359E9] ml-2 whitespace-nowrap">Customer</span>
               <span className="ml-2">are Saying</span>
@@ -209,12 +201,12 @@ async function Home() {
           </div>
         </div>
 
-
         {/*Banner*/}
-        <div className="flex justify-center">
+        <div className=" hidden md:flex md:justify-center ">
           <Banner />
         </div>
       </div>
+
 
       <div className="footer py-10">
         <Footer />

@@ -11,7 +11,7 @@ export default async function Header() {
     const session = await getServerSession(authOption);
     
     return (
-        <div className='flex flex-row justify-around items-center px-10 gap-[10rem] bg-transparent border-0 rounded-lg shadow-none'>
+        <div className='flex  flex-row justify-around items-center px-10 lg:gap-[10rem] md:gap-[7rem] bg-transparent border-0 rounded-lg shadow-none'>
      
             <div className='flex flex-row gap-1'>
                 <Image
