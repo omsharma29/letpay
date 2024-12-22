@@ -22,7 +22,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: .
-        file: my-turborepo/Doker/DockerFile.user
+        file: my-turborepo/Docker/DockerFile.user
         push: true
         tags: omsharma029/letpay:latest  # Replace with your Docker Hub username and repository
 
