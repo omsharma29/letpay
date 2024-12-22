@@ -5,7 +5,8 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    
   },
 "include": [
   "apps/user/prismaApi/**/*",

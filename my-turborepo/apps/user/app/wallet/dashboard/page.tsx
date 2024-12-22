@@ -1,6 +1,6 @@
 import React from 'react';
 import Mastercard from '../../components/mastercardUI';
-import Activity from '../../components/activity';
+import Activity from '../../components/Activity';
 import Greeting from '../../components/greeting';
 import Graph from '../../components/barchart';
 import SearchBar from '../../components/searchbar';

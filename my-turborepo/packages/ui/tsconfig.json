@@ -5,11 +5,11 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@/lib/*": ["./lib/*"],
-      "@/lib/utils": ["./lib/utils"],
+      "@/lib/*": ["src/lib/*"],
+      "@/lib/utils": ["src/lib/utils"],
       "@repo/ui/*": ["packages/ui/components/*"],
     }
   },
-  "include": ["src", "lib", "components", "components/**/*"],
+  "include": ["src", "src/lib", "components", "components/**/*"],
   "exclude": ["node_modules", "dist"]
 }

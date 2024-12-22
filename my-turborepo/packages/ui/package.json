@@ -14,7 +14,7 @@
     "./table": "./src/table.tsx",
     "./textarea": "./src/textarea.tsx",
     "./label": "./src/label.tsx",
-    "./testimonials" : "./src/animated-testimonials.tsx"
+    "./testimonials" : "./src/infinite-moving-cards.tsx"
   },
   "main": "./components/button.tsx",
   "scripts": {

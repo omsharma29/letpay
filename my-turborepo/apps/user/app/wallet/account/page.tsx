@@ -1,6 +1,6 @@
 import React from 'react';
 import Mastercard from '../../components/mastercardUI';
-import DepositForm from '../../components/deposite';
+import DepositForm from '../../components/Deposits';
 import Greeting from '../../components/greeting';
 import SearchBar from '../../components/searchbar';
 import { getBalance, getOnRampTransaction } from '../../prismaApi/prismaApi';

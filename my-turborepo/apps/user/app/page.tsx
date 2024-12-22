@@ -2,14 +2,14 @@ import Link from "next/link";
 import { Button } from "@repo/ui/button";
 import Image from 'next/image';
 import MainLogo from './components/MainLogoAnimated'
-import Header from "./components/header";
+import Header from "./components/Header";
 import './main.css'
 import ShowCase from "./components/ShowCase";
 import { getServerSession } from "next-auth";
 import Bgpng from './components/assets/bg_.png'
 import Banner from "./components/banner";
 import Footer from "./components/Footer";
-import Testimonials from "./components/Testimonials"
+import {InfiniteMovingCardsDemo} from "./components/Testimonials"
 import DashbaordImage from "./components/DashboardAnimatedImage";
 import { TransferForm } from "./components/TransferFormAnimatedImage";
 import { TransactionalForm } from "./components/TransactionalLogsAnimatedImage";
@@ -186,7 +186,7 @@ const session = await getServerSession(authOption)
           </div>
 
           <div className="flex justify-center">
-            <Testimonials />
+            <InfiniteMovingCardsDemo />
           </div>
         </div>
 
