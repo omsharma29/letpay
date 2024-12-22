@@ -2,10 +2,10 @@ FROM node:20.12.0-alpine3.19
 
 WORKDIR /usr/src/app
 
-# Copy the main project configuration files
-COPY package.json package-lock.json turbo.json ./
+# Copy project configuration files
+COPY my-turborepo/package.json my-turborepo/package-lock.json my-turborepo/turbo.json ./
 
-# Copy the apps and packages directories from my-turborepo
+# Copy the apps and packages directories
 COPY my-turborepo/apps ./apps
 COPY my-turborepo/packages ./packages
 
