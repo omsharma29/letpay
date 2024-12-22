@@ -40,7 +40,7 @@ export default function Header() {
                     <Link href="/wallet/transfer" className="font-openSans hover:underline">
                         Transfer
                     </Link>
-                    <Link href="/wallet/deposits" className="font-openSans hover:underline">
+                    <Link href="/wallet/account" className="font-openSans hover:underline">
                         Deposits
                     </Link>
                 </div>
@@ -75,7 +75,7 @@ export default function Header() {
                                 Transfer
                             </Button>
                         </Link>
-                        <Link href="/wallet/deposits">
+                        <Link href="/wallet/account">
                             <Button className="font-openSans hover:underline bg-custom-black border border-[#6359E9] active:bg-[#6359E9] hover:bg-[#6359E9] text-[#6359E9] active:text-white hover:text-white px-6 py-3">
                                 Deposits
                             </Button>

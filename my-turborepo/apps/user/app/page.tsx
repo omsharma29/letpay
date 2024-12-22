@@ -5,7 +5,7 @@ import MainLogo from './components/MainLogoAnimated'
 import Header from "./components/header";
 import './main.css'
 import ShowCase from "./components/ShowCase";
-
+import { getServerSession } from "next-auth";
 import Bgpng from './components/assets/bg_.png'
 import Banner from "./components/banner";
 import Footer from "./components/Footer";
@@ -13,10 +13,11 @@ import Testimonials from "./components/Testimonials"
 import DashbaordImage from "./components/DashboardAnimatedImage";
 import { TransferForm } from "./components/TransferFormAnimatedImage";
 import { TransactionalForm } from "./components/TransactionalLogsAnimatedImage";
+import { authOption } from "./lib/credential";
 
 async function Home() {
 
-
+const session = await getServerSession(authOption)
   return (
     <div className="flex flex-col">
 
@@ -40,7 +41,7 @@ async function Home() {
           </h1>
           <br />
           <p className="font-openSans">Send Money to Friends Effortlessly—With Let'sPay!</p> <br />
-          <Link href="#">
+          <Link href={session ? "/wallet/dashboard" : "/api/auth/signin"}>
             <Button className="text-[#6359E9] font-openSans hover:bg-[#6359E9] hover:text-white">Start Now</Button>
           </Link>
         </div>
