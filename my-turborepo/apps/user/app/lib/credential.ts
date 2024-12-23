@@ -87,7 +87,7 @@
 
 import prisma from "@repo/db/client";
 import CredentialsProvider from "next-auth/providers/credentials";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import GoogleProvider from "next-auth/providers/google";
 require("dotenv").config();
 
