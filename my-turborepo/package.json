@@ -7,7 +7,8 @@
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "db:generate" : "cd packages/db && npx prisma generate && cd ../..",
-    "start-user-app": "cd ./apps/user && npm run start"
+    "start-user-app": "cd ./apps/user && npm run start",
+    "deploy" : "turbo run build --scope=app --includeDependencies --no-deps"
   },
   "devDependencies": {
     "prettier": "^3.2.5",
