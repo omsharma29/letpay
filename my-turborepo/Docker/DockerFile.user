@@ -1,14 +1,25 @@
+# Use Node.js base image
 FROM node:20.12.0-alpine3.19
 
+# Set working directory
 WORKDIR /usr/src/app
 
-COPY package.json package-lock.json turbo.json  ./
+# Copy package files
+COPY package.json package-lock.json turbo.json ./
 
+# Copy project files
 COPY apps ./apps
 COPY packages ./packages
 
+# Network fixes
+
+
 # Install dependencies
 RUN npm install
+
+# Generate database
+RUN npm run db:generate
+
 # Can you add a script to the global package.json that does this?
 RUN npm run db:generate
 

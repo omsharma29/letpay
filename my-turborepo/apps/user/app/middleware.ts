@@ -1,11 +1,18 @@
 import { NextResponse } from 'next/server';
 import { getToken } from 'next-auth/jwt';
-import type { NextRequest } from 'next/server';
+import { NextRequest } from 'next/server';
 
 const secret = process.env.NEXTAUTH_SECRET;
 
 export async function middleware(req: NextRequest) {
-  const token = await getToken({ req, secret });
+  // Convert NextRequest to a compatible format for getToken
+  const token = await getToken({
+    req: {
+      cookies: req.cookies,
+      headers: req.headers,
+    } as any, // Cast to match the expected type
+    secret,
+  });
 
   // Protect all routes starting with /wallet/
   if (req.nextUrl.pathname.startsWith('/wallet') && !token) {
