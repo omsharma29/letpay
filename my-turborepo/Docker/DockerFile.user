@@ -21,7 +21,7 @@ RUN npm install --legacy-peer-deps
 RUN cd packages/db && npx prisma generate && cd ../..
 
 # Build the project using Turbo
-RUN turbo run build
+RUN turbo build
 
 # Set the command to start the user app
 CMD ["npm", "run", "start-user-app"]
