@@ -1,19 +1,27 @@
+# Use Node.js image
 FROM node:20.12.0-alpine3.19
 
+# Set the working directory
 WORKDIR /usr/src/app
 
-# Copy project configuration files
+# Copy root-level project configuration
 COPY my-turborepo/package.json my-turborepo/package-lock.json my-turborepo/turbo.json ./
 
-# Copy the apps and packages directories
+# Install Turbo CLI globally
+RUN npm install -g turbo
+
+# Copy the monorepo contents
 COPY my-turborepo/apps ./apps
 COPY my-turborepo/packages ./packages
 
 # Install dependencies
-RUN npm install
+RUN npm install --legacy-peer-deps
+
+# Generate Prisma client if required
 RUN cd packages/db && npx prisma generate && cd ../..
 
-# Build the project
-RUN npm run build
+# Build the project using Turbo
+RUN turbo run build
 
+# Set the command to start the user app
 CMD ["npm", "run", "start-user-app"]
