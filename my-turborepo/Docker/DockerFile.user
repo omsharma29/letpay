@@ -25,7 +25,7 @@ RUN npx prisma generate
 WORKDIR /usr/src/app
 
 # Build the user app using Turbo
-RUN turbo build --filter=apps/user...
+RUN npm run build --filter=apps/web...
 
 # Start the user app
 CMD ["npm", "run", "start-user-app"]
